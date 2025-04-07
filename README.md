@@ -118,3 +118,93 @@ This is lab 4 below.
 [See Lab 2](https://github.com/abdul-rehman-236/DevOps_Lab_02)
 ### Point 4: Perform Lab on Git Lecture 2 Slide 16
 [See Lab 2](https://github.com/abdul-rehman-236/DevOps_Lab_02)
+### Point 5: Create a new local git repo.
+* Create a new local git repo.
+  ```
+  mkdir DevOps_Lab_04_Point_5
+  cd DevOps_Lab_04_Point_5
+  git init
+* Create file1, add some lines in it and commit it to the local repo.
+  ```
+  touch file1
+  # file1 (This is content of file1.)
+  git add file1
+  git commit -m 'Initial commit'
+* Now add a new line in file1 and commit changes.
+  ```
+  # file1:
+      This is content of file1.
+      This is second line content of file1.
+  git add file1
+  git commit -m 'file1 second line added'
+* Now create file2 with few lines and commit it
+  ```
+  touch file2
+  # file2:
+      This is content of file2.
+      This is second line content of file2.
+  git add file2
+  git commit -m 'file2 added'
+* Now create file3 with lines, also add another lines in both file1 and file2 and commit changes.
+  ```
+  touch file3
+  # file3:
+      This is content of file3.
+      This is second line content of file3.
+      This is third line content of file3.
+  # file1:
+      This is content of file1.
+      This is second line content of file1.
+      This is third line content of file1.
+  # file2:
+      This is content of file2.
+      This is second line content of file2.
+      This is third line content of file2.
+
+  git add file1 file2 file3
+  git commit -m 'file3 added, file1 and file2 modified'
+* Now revert file1 to the commit 2
+  ```
+  git restore --source=HEAD~2 file 
+* After reverting file1 delete the latest commit.
+  ```
+  git reset --hard HEAD~1
+* Clear the working directing, untracked area but stash unstage area
+  ```
+  git stash push
+  git clean -f
+### Point 6: Connect local repo to the remote repo.
+* Connect local repo to the remote repo.
+  ```
+  git remote add origin https://github.com/abdul-rehman-236/DevOps_Lab_04_Point_5
+### Point 7: Implement Branch Policy to any branch and run the whole git cycle. 
+### Point 8: Fork any repo with only main branch and clone it to your machine.
+* Fork any repo with only main branch and clone it to your machine.
+* Create a new branch form the main branch
+* Create a new file with some lines and commit it. 
+* Create a PR to merge copy repos temp-main branch to original repo main branch. 
+* After merging the PR sync the copy repo main branch both locally and remotely 
+### Point 9: Create a new remote repo.
+* Create a new remote repo.
+* Create a file and commit it to main branch. 
+* Create temp1 and temp2 branches from main branch. 
+* Write line1 in file and commit it to temp1 branch.
+* Create PR for main branch and merge it.
+* Replace line1 with line2 in file and commit it to temp2 branch.
+* Create PR for main branch and merge it. 
+* if you merge conflict on merging the PR you need to abandon your PR. 
+  * Delete temp2 branch.
+  * Pull changes form main branch and create temp2 again.
+  * Now replace line1 with line2 and try to merge in main
+### Point 10: Create a empty local repo.
+* Create a empty local repo.
+* Now create 4 files and add them to local git repo in a separate commit.
+* Use rebase command to merge the last three commits. 
+### Point 11: Create remote repo on github or azure repos.
+* Create remote repo on github or azure repos. 
+* Add a file in the repo and commit it to main branch
+* Now create new-main branch from main. 
+* Clone the repo locally and create a temp-main branch from main. 
+* Make changes to the file and add them to temp-main branch.
+* Create a PR and merge changes to to main branch
+* Also cherry pick changes to new-main branch
